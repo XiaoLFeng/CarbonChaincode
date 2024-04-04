@@ -5,7 +5,6 @@ import org.hyperledger.fabric.contract.Context;
 import org.hyperledger.fabric.contract.ContractInterface;
 import org.hyperledger.fabric.contract.annotation.*;
 import org.hyperledger.fabric.shim.ChaincodeStub;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * 智能合约
@@ -70,7 +69,7 @@ public class CarbonTradingContract implements ContractInterface {
      * @return CarbonTrade
      */
     @Transaction
-    public CarbonTrade queryTrade(@NotNull final Context ctx, final String key) {
+    public CarbonTrade queryTrade(final Context ctx, final String key) {
         ChaincodeStub stub = ctx.getStub();
         String carbonState = stub.getStringState(key);
 
@@ -94,7 +93,7 @@ public class CarbonTradingContract implements ContractInterface {
      * @return CarbonTrade
      */
     @Transaction
-    public CarbonTrade changeOwner(@NotNull final Context ctx, final String key, final String newOwner) {
+    public CarbonTrade changeOwner(final Context ctx, final String key, final String newOwner) {
         ChaincodeStub stub = ctx.getStub();
         String carbonState = stub.getStringState(key);
 
